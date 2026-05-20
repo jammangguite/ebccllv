@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Member": {
+      "title": "Member",
+      "description": "A church member profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique identifier of the member" },
+        "mid": { "type": "string", "description": "Membership ID number" },
+        "bial": { "type": "string", "description": "Bial group association" },
+        "title": { "type": "string", "description": "Title, like Mr., Mrs., etc." },
+        "name": { "type": "string", "description": "Full name of the member" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "dob": { "type": "string", "description": "Date of birth" },
+        "pob": { "type": "string", "description": "Place of birth" },
+        "parents": { "type": "string", "description": "Parents names" },
+        "baptDate": { "type": "string", "description": "Baptism date" },
+        "baptMode": { "type": "string", "description": "Baptism mode" },
+        "tang": { "type": "string", "description": "Pastor officiating baptism" },
+        "mtype": { "type": "string", "description": "Member status type" },
+        "ordained": { "type": "string", "description": "Ordination date if any" },
+        "rel": { "type": "string", "description": "Relationship status" },
+        "wed": { "type": "string", "description": "Wedding date" },
+        "kitenni": { "type": "string", "description": "Church wedding date" },
+        "kitennamun": { "type": "string", "description": "Church wedding location" },
+        "kite": { "type": "string", "description": "Pastor officiating wedding" },
+        "wm": { "type": "string", "description": "Male witness" },
+        "wf": { "type": "string", "description": "Female witness" },
+        "trans": { "type": "string", "description": "Transfer date Pemlut/Potni" },
+        "death": { "type": "string", "description": "Date of death" },
+        "addr": { "type": "string", "description": "Residential address" },
+        "thil": { "type": "string", "description": "Thilpiak option list" },
+        "designation": { "type": "string", "description": "Local committee or church designation" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of last update" }
+      },
+      "required": ["id", "mid", "name", "bial", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "members/{memberId}": {
+      "schema": "Member",
+      "description": "Collection of church member profiles"
+    }
+  }
+}

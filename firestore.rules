@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidMember(data) {
+      return data.keys().hasAll(['id', 'mid', 'name', 'bial', 'updatedAt'])
+        && data.id is string && data.id.size() >= 1 && data.id.size() <= 128
+        && data.mid is string && data.mid.size() >= 1 && data.mid.size() <= 128
+        && data.name is string && data.name.size() >= 1 && data.name.size() <= 256
+        && data.bial is string && data.bial.size() >= 1 && data.bial.size() <= 128
+        && data.updatedAt is string && data.updatedAt.size() >= 1 && data.updatedAt.size() <= 128;
+    }
+
+    // Members CRUD Match block
+    match /members/{memberId} {
+      allow read: if true;
+      allow create: if isValidId(memberId) && memberId == incoming().id && isValidMember(incoming());
+      allow update: if isValidId(memberId) && memberId == incoming().id && isValidMember(incoming());
+      allow delete: if isValidId(memberId);
+    }
+
+    // Connection test document
+    match /test/{testDoc} {
+      allow read: if true;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="nav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1c5a" />
+      <stop offset="100%" stop-color="#1a2a6c" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9972d" />
+      <stop offset="100%" stop-color="#f5c842" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#nav)" rx="15%" />
+  <circle cx="256" cy="256" r="180" fill="none" stroke="url(#gold)" stroke-width="16" />
+  <!-- Church Cross -->
+  <path d="M 236 140 H 276 V 400 H 236 Z" fill="url(#gold)" />
+  <path d="M 170 200 H 342 V 240 H 170 Z" fill="url(#gold)" />
+  <!-- Star decoration -->
+  <polygon points="256,90 261,105 276,105 264,115 268,130 256,120 244,130 248,115 236,105 251,105" fill="#f5c842" />
+</svg>

@@ -1,0 +1,39 @@
+{
+  "name": "EBCC Lailam Veng Members",
+  "short_name": "EBCC LLV",
+  "description": "Church member management for EBCC, Lailam Veng",
+  "start_url": "./index.html",
+  "id": "ebcc-llv-members",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#1a2a6c",
+  "theme_color": "#1a2a6c",
+  "lang": "en",
+  "categories": ["productivity", "utilities"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Member",
+      "url": "./index.html",
+      "description": "Register a new member"
+    },
+    {
+      "name": "Reports",
+      "url": "./index.html",
+      "description": "View member reports"
+    }
+  ]
+}
