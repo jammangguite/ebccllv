@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Sidebar } from './components/Sidebar';
 import { Dashboard } from './components/Dashboard';
 import { MemberList } from './components/MemberList';
@@ -839,6 +840,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+      <SpeedInsights />
       {/* Offline Status Banner */}
       {!online && (
         <div className="bg-red-600 text-white font-bold text-[10px] text-center py-1.5 flex items-center justify-center gap-1.5 uppercase tracking-wider relative z-[1000]">
